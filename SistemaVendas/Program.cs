@@ -24,6 +24,13 @@ namespace SistemaVendas
                 );
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+            builder.Services.AddScoped<IDistribuidoraRepository, DistribuidoraRepository>();
+            builder.Services.AddScoped<IItensNFeRepository, ItensNFeRepository>();
+            builder.Services.AddScoped<INFeRepository, NFeRepository>();
+            builder.Services.AddScoped<IProdutoVendaRepository, ProdutoVendaRepository>();
+            builder.Services.AddScoped<IVendaRepository, VendaRepository>();
+            builder.Services.AddScoped<IMarcaRepository, MarcaRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

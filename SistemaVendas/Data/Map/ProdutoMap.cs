@@ -9,10 +9,13 @@ namespace SistemaVendas.Data.Map
         public void Configure(EntityTypeBuilder<ProdutoModel> builder)
         {
             builder.HasKey(x => x.id);
-            builder.Property(x => x.nomeproduto).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.codigo).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.preco).IsRequired().HasMaxLength(100);
-            builder.Property(x => x.quant_estoque).IsRequired().HasMaxLength(100);
+            builder.HasOne(x => x.Marca)
+                .WithMany()
+                .HasForeignKey(x => x.id_marca)
+                .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(x => x.cod_barras).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.nome_produto).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.preco_venda).IsRequired().HasMaxLength(100);
         }
 
 

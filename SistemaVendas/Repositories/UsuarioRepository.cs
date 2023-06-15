@@ -17,7 +17,7 @@ namespace SistemaVendas.Repositories
             return await _dbContext.Usuarios.FirstOrDefaultAsync(x => x.id == id);
         }
 
-        public async Task<List<UsuarioModel>> AllUsers()
+        public async Task<List<UsuarioModel>> AllUsuarios()
         {
             return await _dbContext.Usuarios.ToListAsync();
         }

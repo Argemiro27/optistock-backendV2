@@ -19,7 +19,7 @@ namespace SistemaVendas.Controllers
         [HttpGet]
         public async Task<ActionResult<List<ProdutoModel>>> AllProducts()
         {
-            List<ProdutoModel> produtos = await _produtoRepository.AllProducts();
+            List<ProdutoModel> produtos = await _produtoRepository.AllProdutos();
             return Ok(produtos);
         }
 

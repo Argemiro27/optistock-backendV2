@@ -4,7 +4,7 @@ namespace SistemaVendas.Repositories.Interfaces
 {
     public interface IProdutoRepository
     {
-        Task<List<ProdutoModel>> AllProducts();
+        Task<List<ProdutoModel>> AllProdutos();
         Task<ProdutoModel> GetById(int id);
         Task<ProdutoModel> Create(ProdutoModel produto);
         Task<ProdutoModel> Update(ProdutoModel produto, int id);

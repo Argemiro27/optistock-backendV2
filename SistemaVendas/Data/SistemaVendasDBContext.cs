@@ -12,6 +12,13 @@ namespace SistemaVendas.Data
         }
         public DbSet<UsuarioModel> Usuarios { get; set; }
         public DbSet<ProdutoModel> Produtos { get; set; }
+        public DbSet<ClienteModel> Clientes { get; set; }
+        public DbSet<DistribuidoraModel> Distribuidoras { get; set; }
+        public DbSet<MarcaModel> Marcas { get; set; }
+        public DbSet<NFeModel> NFes { get; set; }
+        public DbSet<ItensNFeModel> ItensNFes { get; set; }
+        public DbSet<ProdutoVendaModel> ProdutoVendas { get; set; }
+        public DbSet<VendaModel> Vendas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

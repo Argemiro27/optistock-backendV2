@@ -12,7 +12,7 @@ namespace SistemaVendas.Repositories
         {
             _dbContext = sistemaVendasDBContext;
         }
-        public async Task<List<ProdutoModel>> AllProducts()
+        public async Task<List<ProdutoModel>> AllProdutos()
         {
             return await _dbContext.Produtos.ToListAsync();
         }
@@ -34,11 +34,10 @@ namespace SistemaVendas.Repositories
             {
                 throw new Exception($"Produto para ID: {id} não encontrado!");
             }
-
-            produtoById.nomeproduto = produto.nomeproduto;
-            produtoById.preco = produto.preco;
-            produtoById.codigo = produto.codigo;
-            produtoById.quant_estoque = produto.quant_estoque;
+            produtoById.id_marca = produto.id_marca;
+            produtoById.cod_barras = produto.cod_barras;
+            produtoById.nome_produto = produto.nome_produto;
+            produtoById.preco_venda = produto.preco_venda;
 
             _dbContext.Produtos.Update(produtoById);
             await _dbContext.SaveChangesAsync();

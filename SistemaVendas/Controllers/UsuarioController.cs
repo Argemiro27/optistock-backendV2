@@ -18,7 +18,7 @@ namespace SistemaVendas.Controllers
         [HttpGet]
         public async Task<ActionResult<List<UsuarioModel>>> AllUsers() 
         {
-            List<UsuarioModel> usuarios = await _usuarioRepository.AllUsers();
+            List<UsuarioModel> usuarios = await _usuarioRepository.AllUsuarios();
             return Ok(usuarios);
         }
         [HttpGet("{id}")]
